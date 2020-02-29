@@ -6,9 +6,14 @@
 
 body,html{
     height:100;
-    background-color:#f1f1f1;
+    background-color:#333;
+    color:#f1f1f1;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align:center;
 }
+
 .menu-wrap {
     position: fixed;
     top: 0;
@@ -33,7 +38,6 @@ body,html{
     width: 60px;
     height: 60px;
     padding: 1rem;
-    /* background: var(--primary-color); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,7 +89,6 @@ body,html{
   }
   .menu-wrap .toggler:checked ~ .menu > div {
     transform: scale(1);
-    /* transition-duration: var(--menu-speed); */
   }
   .menu-wrap .toggler:checked ~ .menu > div > div {
     opacity: 1;
@@ -104,7 +107,6 @@ body,html{
     justify-content: center;
   }
   .menu-wrap .menu > div {
-    /* background: var(--overlay-color); */
     border-radius: 50%;
     width: 200vw;
     height: 200vw;
@@ -115,6 +117,7 @@ body,html{
     transform: scale(0);
     transition: all 0.6s ease;
     background-color: rgba(0, 0, 0, 0.75);
+    z-index: 3;
   }
   .menu-wrap .menu > div > div {
     text-align: center;
@@ -134,7 +137,7 @@ body,html{
     text-decoration: none;
     transition: color 0.4s ease;
   }
-/* Css för Hero image och loggan */
+  /* Css för Hero image och loggan */
 
 .img-container{
     position:relative;
@@ -180,4 +183,135 @@ body,html{
 }
 .btn:hover{
     opacity:0.8;
+}
+img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+h1, h2, h3{
+  margin:0;
+  padding:1em 0;
+}
+p{
+  margin:0;
+  padding:1em 1em;
+}
+
+/* Section A */
+
+#section-a{
+  background:#eaeaea;
+  color:#333;
+  padding-bottom:2em;
+  margin:0 0 1em 0;
+}
+
+/* Section B */
+
+#section-b{
+  padding:2em 1em 1em;
+}
+#section-b, ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+#section-b li{
+margin-bottom:1em;
+background:#fff;
+color:#333;
+}
+.card-content{
+  padding:1.5em;
+}
+
+/* Section C */
+#section-c{
+  background:#fff;
+  color:#333;
+  padding:2em;
+}
+
+/* Section D / Boxes */
+#section-d, .box{
+  /* padding:2em; */
+  color:#fff;
+}
+#section-d .box:first-child{
+  background:#2690d4;
+}
+
+/* Footer */
+#main-footer{
+  padding:2em;
+  background:#000;
+  color:#fff;
+  text-align:center;
+}
+
+/* Responsiv Indexsida */
+@media(min-width:700px){
+  img{
+    height:400px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto,25em)) 1fr;
+  }
+  #section-a 
+  .content-text{
+    columns: 2;
+    column-gap: 2em;
+  }
+  #section-a .content-text p{
+    padding-top:0;
+  }
+  .content-wrap,
+  #section-b ul{
+    grid-column: 2/4;
+  }
+  .box, #main-footer div{
+    grid-column:span 2;
+  }
+  #section-b ul{
+    display:flex;
+    justify-content:space-around;
+    
+  }
+  #section-b li{
+    width:31%;
+  }  
+}
+/* Photo Grid */
+.row{
+  display:flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin-bottom: 4px;
+  align-items:center;
+  justify-content: center;
+}
+.column{
+  flex: 33%;
+  max-width:33%;
+  padding:0 4px;
+}
+.column img{
+  margin-top: 8px;
+  vertical-align: middle;
+}
+/* Gör två kolumner istället för fyra i portfolio*/
+@media(max-width:800px){
+  .column{
+    flex:50%;
+    max-width:50%;
+  }
+}
+/* Gör en kolumn istället för två */
+@media(max-width:700px){
+  .column{
+    flex:100%;
+    max-width:100%;
+  }
 }
