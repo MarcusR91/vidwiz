@@ -352,5 +352,11 @@ input[type=submit]{
   background-color:#2690d4;
   color:#fff;
   padding:5px;
+  text-transform: uppercase;
 }
-
+.clients{
+  background-color:#2690d4;
+  color:#fff;
+  padding:5px; 
+  text-transform: uppercase;
+}
